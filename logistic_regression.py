@@ -39,7 +39,10 @@ def logistic_regression():
     lr.fit(x_train, y_train)
 
     predict = lr.predict(x_test)
-    print(classification_report(y_test, predict, labels=[2, 4], target_names=['良性', '恶性']))
+    report = classification_report(y_test, predict, labels=[2, 4], target_names=['良性', '恶性'])
+    print(report)
+    coef = lr.coef_
+    print(np.dot(coef, coef.T))
 
     return None
 
