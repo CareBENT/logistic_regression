@@ -35,7 +35,7 @@ def logistic_regression():
     x_test = std.transform(x_test)
 
     # 5、构造并训练模型
-    lr = LogisticRegression(C=1.0)
+    lr = LogisticRegression(penalty='l2', C=1.0)
     lr.fit(x_train, y_train)
 
     predict = lr.predict(x_test)
